@@ -147,29 +147,7 @@
     </div>
 
     <script>
-        // Service Worker script embedded
-        const serviceWorkerScript = `
-            self.addEventListener('install', (event) => {
-                console.log('Service Worker installed');
-            });
-
-            self.addEventListener('fetch', (event) => {
-                event.respondWith(fetch(event.request));
-            });
-        `;
-
-        // Register Service Worker
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                const blob = new Blob([serviceWorkerScript], { type: 'application/javascript' });
-                const workerURL = URL.createObjectURL(blob);
-                
-                navigator.serviceWorker.register(workerURL)
-                    .then(reg => console.log('Service Worker registered'))
-                    .catch(err => console.log('Service Worker registration failed:', err));
-            });
-        }
-
+    
         // Get DOM elements
         const buyPrice = document.getElementById('buyPrice');
         const sellPrice = document.getElementById('sellPrice');
