@@ -227,17 +227,17 @@
                 </div>
                 <div class="result-item">
                     ${calcType.value === 'quantity' ? 'Total Investment' : 'Total Quantity'}: 
-                    PKR.${calcType.value === 'quantity' ? investment.toFixed(2) : quantity.toFixed(2)}
+                    PKR. ${calcType.value === 'quantity' ? investment.toFixed(2) : quantity.toFixed(2)}
                     <span class="ceiling">(${Math.ceil(calcType.value === 'quantity' ? investment : quantity)})</span>
                 </div>
                 <div class="result-item">
-                    Total Return: PKR.${totalReturn.toFixed(2)}
+                    Total Return: PKR. ${totalReturn.toFixed(2)}
                     <span class="ceiling">(${Math.ceil(totalReturn)})</span>
                 </div>
-                <div class="result-item">Break-Even Price: PKR.${breakEven.toFixed(2)}</div>
-                <div class="result-item">Profit per Share: PKR.${profitPerShare.toFixed(2)}</div>
+                <div class="result-item">Break-Even Price: PKR. ${breakEven.toFixed(2)}</div>
+                <div class="result-item">Profit per Share: PKR. ${profitPerShare.toFixed(2)}</div>
                 <div class="result-item">Risk-to-Reward: ${riskReward.toFixed(2)}% (${(riskReward/100).toFixed(2)})</div>
-                <div class="result-item">Total Broker Amount: PKR.${totalBroker.toFixed(2)}</div>
+                <div class="result-item">Total Broker Amount: PKR. ${totalBroker.toFixed(2)}</div>
             `;
         }
     </script>
