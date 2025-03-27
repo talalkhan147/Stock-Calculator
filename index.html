@@ -135,10 +135,7 @@
             <input type="number" id="amount" min="0" step="1">
         </div>
 
-<!--         <div class="input-group">
-            <label>Broker Fee (PKR)</label>
-            <input type="number" id="brokerFee" min="0" step="0.01">
-        </div> -->
+ 
 
         <div class="results" id="results">
             <p class="waiting-text">Enter Data to See Results</p>
@@ -153,7 +150,7 @@
         const sellPrice = document.getElementById('sellPrice');
         const calcType = document.getElementById('calcType');
         const amount = document.getElementById('amount');
-        const brokerFee = document.getElementById('brokerFee');
+        
         const results = document.getElementById('results');
         const amountLabel = document.getElementById('amountLabel');
 
@@ -164,17 +161,16 @@
         });
 
         // Add input listeners
-        [buyPrice, sellPrice, calcType, amount, brokerFee].forEach(input => {
+        [buyPrice, sellPrice, calcType, amount].forEach(input => {
             input.addEventListener('input', calculate);
         });
 
         function calculate() {
             const buy = parseFloat(buyPrice.value) || 0;
             const sell = parseFloat(sellPrice.value) || 0;
-            const fee = parseFloat(brokerFee.value) || 0;
             const value = parseFloat(amount.value) || 0;
 
-            if (!buy || !sell || !value || isNaN(fee)) {
+            if (!buy || !sell || !value ) {
                 results.innerHTML = '<p class="waiting-text">Enter Data to See Results</p>';
                 return;
             }
@@ -189,10 +185,10 @@
             }
 
             const totalReturn = quantity * sell;
-            const profitLoss = totalReturn - investment - fee;
-            const breakEven = (investment + fee) / quantity;
-            const profitPerShare = sell - buy - (fee / quantity);
-            const totalBroker = fee;
+            const profitLoss = totalReturn - investment ;
+            const breakEven = (investment ) / quantity;
+            const profitPerShare = sell - buy ;
+          
             const riskReward = profitLoss / investment * 100;
 
             results.innerHTML = `
@@ -215,7 +211,7 @@
                 <div class="result-item">Break-Even Price: PKR. ${breakEven.toFixed(2)}</div>
                 <div class="result-item">Profit per Share: PKR. ${profitPerShare.toFixed(2)}</div>
                 <div class="result-item">Risk-to-Reward: ${riskReward.toFixed(2)}% (${(riskReward/100).toFixed(2)})</div>
-                <!--    <div class="result-item">Total Broker Amount: PKR. ${totalBroker.toFixed(2)}</div>  -->
+               
             `;
         }
     </script>
