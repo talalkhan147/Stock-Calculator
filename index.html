@@ -195,21 +195,21 @@
                 <div class="result-item">
                     Profit / Loss: 
                     <span class="${profitLoss >= 0 ? 'profit' : 'loss'}">
-                        ${profitLoss >= 0 ? '<img width="8%"  src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f929/512.webp">'+' ▲' : '<img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f972/512.gif" alt="🥲" width="32" height="32">' + ' ▼'} PKR.${profitLoss.toFixed(2)}
+                        ${profitLoss >= 0 ? '<img width="8%"  src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f929/512.webp">'+' ▲' : '<img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f972/512.gif" alt="🥲" width="32" height="32">' + ' ▼'}  ${profitLoss.toFixed(2)}
                     </span>
                     <span class="ceiling">(${Math.ceil(profitLoss)})</span>
                 </div>
                 <div class="result-item">
                     ${calcType.value === 'quantity' ? 'Total Investment' : 'Total Quantity'}: 
-                    PKR. ${calcType.value === 'quantity' ? investment.toFixed(2) : quantity.toFixed(2)}
+                      ${calcType.value === 'quantity' ? investment.toFixed(2) : quantity.toFixed(2)}
                     <span class="ceiling">(${Math.ceil(calcType.value === 'quantity' ? investment : quantity)})</span>
                 </div>
                 <div class="result-item">
-                    Total Return: PKR. ${totalReturn.toFixed(2)}
+                    Total Return:   ${totalReturn.toFixed(2)}
                     <span class="ceiling">(${Math.ceil(totalReturn)})</span>
                 </div>
-                <div class="result-item">Break-Even Price: PKR. ${breakEven.toFixed(2)}</div>
-                <div class="result-item">Profit per Share: PKR. ${profitPerShare.toFixed(2)}</div>
+                <div class="result-item">Break-Even Price:   ${breakEven.toFixed(2)}</div>
+                <div class="result-item">Profit per Share:   ${profitPerShare.toFixed(2)}</div>
                 <div class="result-item">Risk-to-Reward: ${riskReward.toFixed(2)}% (${(riskReward/100).toFixed(2)})</div>
                
             `;
