@@ -113,12 +113,12 @@
         <h1 class="title"><img width="10%" src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f63a/512.webp" > Pauli's Happy Calculator</h1>
         
         <div class="input-group">
-            <label>Buy Price</label>
+            <label>Buy Price 💰</label>
             <input type="number" id="buyPrice" min="0" step="0.01">
         </div>
 
         <div class="input-group">
-            <label>Sell Price</label>
+            <label>Sell Price 💸</label>
             <input type="number" id="sellPrice" min="0" step="0.01">
         </div>
 
@@ -126,12 +126,12 @@
             <label>Type</label>
             <select id="calcType">
                 <option value="quantity">Quantity</option>
-                <option value="investment">Investment</option>
+                <option value="investment">Investment 🪙</option>
             </select>
         </div>
 
         <div class="input-group">
-            <label id="amountLabel">Quantity</label>
+            <label id="amountLabel">Quantity 🔢</label>
             <input type="number" id="amount" min="0" step="1">
         </div>
 
@@ -156,7 +156,7 @@
 
         // Update label based on dropdown
         calcType.addEventListener('change', () => {
-            amountLabel.textContent = calcType.value === 'quantity' ? 'Quantity' : 'Investment (PKR)';
+            amountLabel.textContent = calcType.value === 'quantity' ? 'Quantity 🔢' : 'Investment 🪙';
             calculate();
         });
 
@@ -195,12 +195,12 @@
                 <div class="result-item">
                     Profit / Loss: 
                     <span class="${profitLoss >= 0 ? 'profit' : 'loss'}">
-                        ${profitLoss >= 0 ? '<img width="8%"  src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f929/512.webp">'+' ▲' : '<img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f972/512.gif" alt="🥲" width="32" height="32">' + ' ▼'}  ${profitLoss.toFixed(2)}
+                        ${profitLoss >= 0 ? '<img width="8%"  src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f929/512.webp">'+' 🪙 ▲' : '<img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f972/512.gif" alt="🥲" width="32" height="32">' + ' 🪙 ▼'}  ${profitLoss.toFixed(2)}
                     </span>
                     <span class="ceiling">(${Math.ceil(profitLoss)})</span>
                 </div>
                 <div class="result-item">
-                    ${calcType.value === 'quantity' ? 'Total Investment' : 'Total Quantity'}: 
+                    ${calcType.value === 'quantity' ? 'Total Investment 🪙' : 'Total Quantity 🔢 '}: 
                       ${calcType.value === 'quantity' ? investment.toFixed(2) : quantity.toFixed(2)}
                     <span class="ceiling">(${Math.ceil(calcType.value === 'quantity' ? investment : quantity)})</span>
                 </div>
