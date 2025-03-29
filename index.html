@@ -113,12 +113,12 @@
         <h1 class="title"><img width="10%" src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f63a/512.webp" > Pauli's Happy Calculator</h1>
         
         <div class="input-group">
-            <label>Buy Price (PKR)</label>
+            <label>Buy Price  </label>
             <input type="number" id="buyPrice" min="0" step="0.01">
         </div>
 
         <div class="input-group">
-            <label>Sell Price (PKR)</label>
+            <label>Sell Price  </label>
             <input type="number" id="sellPrice" min="0" step="0.01">
         </div>
 
@@ -156,7 +156,7 @@
 
         // Update label based on dropdown
         calcType.addEventListener('change', () => {
-            amountLabel.textContent = calcType.value === 'quantity' ? 'Quantity' : 'Investment (PKR)';
+            amountLabel.textContent = calcType.value === 'quantity' ? 'Quantity' : 'Investment  ';
             calculate();
         });
 
